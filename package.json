@@ -7,35 +7,27 @@
     "node": ">= 18.12 <19"
   },
   "devDependencies": {
-    "@types/jest": "~29.2",
+    "@types/express": "^4.17.17",
     "@types/node": "~18",
     "@typescript-eslint/eslint-plugin": "~5.44",
     "@typescript-eslint/parser": "~5.44",
     "eslint": "~8.28",
     "eslint-config-prettier": "~8.5",
-    "eslint-plugin-jest": "~27.1",
-    "jest": "~29.3",
     "prettier": "~2.8",
     "rimraf": "~3.0",
-    "ts-jest": "~29.0",
     "tsutils": "~3.21",
     "typescript": "~4.9"
   },
   "scripts": {
-    "start": "node build/src/main.js",
-    "clean": "rimraf coverage build tmp",
+    "start": "node build/api/index.js",
     "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.json",
-    "build:watch": "tsc -w -p tsconfig.json",
-    "build:release": "npm run clean && tsc -p tsconfig.release.json",
     "lint": "eslint . --ext .ts --ext .mts",
-    "test": "jest --coverage",
-    "prettier": "prettier --config .prettierrc --write .",
-    "test:watch": "jest --watch"
+    "prettier": "prettier --config .prettierrc --write ."
   },
-  "author": "Jakub Synowiec <jsynowiec@users.noreply.github.com>",
-  "license": "Apache-2.0",
+  "author": "Denilson Rocha",
   "dependencies": {
+    "express": "^4.18.2",
     "tslib": "~2.4"
   },
   "volta": {

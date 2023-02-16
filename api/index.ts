@@ -1,15 +1,21 @@
 import express, { Request, Response, Router } from "express"
+import * as dotenv from "dotenv"
 
+// configurações
 const app = express()
 const router = Router()
+dotenv.config()
 
 app.use(express.json())
 app.use(router)
 
-router.get("/", (req: Request, res: Response) => {
-  req
+// rotas
+router.get("/", (_req: Request, res: Response) => {
   res.send({
-    mensagem: "funcionando paeh",
+    mensagem: "template node com typescript",
   })
 })
-app.listen(8080, () => console.log("http://localhost:8080"))
+
+// servidor
+const porta = process.env.PORT || 3030
+app.listen(porta, () => console.log("http://localhost:8080"))
